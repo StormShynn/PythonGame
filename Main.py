@@ -286,5 +286,48 @@ def XS(id):
 	Reward(id, select, Bet, num)
 	input("Cotinue;")
 	MenuMain(id)
-	
+
+def CoinMining(id):
+	Clear()
+	Scoinmining()
+	user, coin = System.LoadDataUser(id)
+	print(f" User: {user}          Coin: {coin} Xu")
+	blocks = input(f" Nhập Số Block Đào: ")
+	coinlist = [200, 400, 600,
+							800, 1000, 1200,
+							1400, 1600, 1800,
+							2000, 2200, 2400]
+	if blocks.isdigit():
+		for i in range(int(blocks)):
+			blockchain = random.randint(10, 50)
+			nimed = 0
+			difficulty = random.randint(3000, 3500)
+			A = blockchain * difficulty
+			for _ in range(A):
+				nimed += 1 
+				sys.stdout.write(f"\r[{i}] Mine: {nimed:07d}")
+				sleep(0)
+			mined_coin = random.choice(coinlist)
+			System.CoinRepair(mined_coin, id)
+			user, coin = System.LoadDataUser(id)
+			unit = "Xu" if mined_coin >= 1000 else " Xu"
+			print(f"\n[{i}] +{mined_coin} {unit} | Tổng: {coin} Xu\n")
+		Loading(5)
+		MenuMain(id)
+	elif Nblock.lower() == 'n':
+		MenuMain(id)
+	else:
+		print(f" Vui Lòng Nhập Số !!")
+		Loading(3)
+		CoinMining(id)
+
+def BXH(id):
+	Coin, coin, User, user=System.Charts(id)
+	Scharts(1, Coin, User)
+	Scharts(2, coin, user)
+	Enter()
+	if (id == 0):
+		MENU()
+	else:
+		MenuMain(id)
 MENU()
