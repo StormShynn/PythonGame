@@ -83,3 +83,21 @@ def LoadDataCoin(id):
 	coin = data_list[id][3]
 	coin = int(coin)
 	return coin
+def Charts(id):
+	data_list = ListSheet()
+	coin1 = 0 ; coin2 = 0 
+	user1 = 0 ; user2 = 0
+	for i in range(len(data_list)):
+		Coin = LoadDataCoin(i)
+		if (int(Coin) > int(coin1)):
+			coin1 = data_list[i][3]
+			user1 = data_list[i][1]
+			Code = i
+	for i in range(len(data_list)):
+		Coin = LoadDataCoin(i)
+		if i == Code:
+			continue
+		if (int(Coin) > int(coin2)):
+			coin2 = data_list[i][3]
+			user2 = data_list[i][1]
+	return coin1, coin2, user1, user2
