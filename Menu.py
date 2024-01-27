@@ -126,13 +126,12 @@ def Scoinmining():
 	print(coin)
 	Crossbar()
 	
-def Scharts(top, user, coin, space):
-	charts = """
+def Scharts(top, user, coin):
+	charts = f"""
 	╔════════════════════════╗
-	║
+	║			 Top {top}         ║
 	║ User: {user}
-	║ Coin: {coin:,} Xu
+	║ Coin: {coin} Xu
 	╚════════════════════════╝
 	"""
 	print(charts)
-
