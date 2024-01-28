@@ -176,7 +176,7 @@ def MenuMain(id):
 		1: lambda: XS(id),
 		2: lambda: CoinMining(id),
 		3: lambda: BXH(id),
-		4: lambda: Exit()
+		4: lambda: MenuMain(id)
 		}
 		if option in actions:
 			actions[option]()
