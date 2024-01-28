@@ -216,9 +216,9 @@ def XS(id):
 		elif i == 1:
 			odd_count = int( 100 * Percent)
 			even_count = 100 - odd_count
-		odd_numbers = [random.randrange(1, 99, 2) for _ in range(odd_count)]
-		even_numbers = [random.randrange(2, 99, 2) for _ in range(even_count)]
-		result_list = odd_numbers + even_numbers
+		odd = [random.randrange(1, 99, 2) for _ in range(odd_count)]
+		even = [random.randrange(2, 99, 2) for _ in range(even_count)]
+		result_list = odd + even
 		random.shuffle(result_list)
 		return random.choice(result_list)
 	def CoinBet(id, select):
