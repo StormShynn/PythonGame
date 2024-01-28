@@ -11,6 +11,7 @@ from time import sleep
 from threading import Thread
 from Menu import Smenu, Sregister, Slogin, Sbanner, SchangePwd, SchangeCoin, Scoinmining, Scharts, SXs, SchangeCoin1, SchangeCoin2, SXs1, SXs2
 # [CODE]
+print(" Vui Lòng Đợi Đang Tải Dữ Liệu Từ Sever !!")
 def Exit():
 	os.sys.exit()
 def Enter():
@@ -20,6 +21,7 @@ def Clear():
 def Crossbar():
 	for i in range(13):
 		sys.stdout.write("▂▂▂▂")
+	sys.stdout.write("\n")
 def Loading(I):
 	frames = ["\r[-->     ]", "\r[ -->    ]",
 	"\r[  -->   ]", "\r[   -->  ]",
@@ -35,8 +37,6 @@ def Space(Number):
 	for i in range(Number):
 		Space += " " * i
 	return Space
-print(" Vui Lòng Đợi Đang Tải Dữ Liệu Từ Sever !!")
-Clear()
 
 def MENU():
 	Clear()
@@ -330,4 +330,6 @@ def BXH(id):
 		MENU()
 	else:
 		MenuMain(id)
+
+Clear()
 MENU()
