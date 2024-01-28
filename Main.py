@@ -174,7 +174,7 @@ def MenuMain(id):
 		1: lambda: XS(id),
 		2: lambda: CoinMining(id),
 		3: lambda: BXH(id),
-		4: lambda: ChangePassword(id)
+		4: lambda: Exit()
 		}
 		if option in actions:
 			actions[option]()
@@ -314,7 +314,7 @@ def CoinMining(id):
 			print(f"\n[{i}] +{mined_coin} {unit} | Tổng: {coin} Xu\n")
 		Loading(5)
 		MenuMain(id)
-	elif Nblock.lower() == 'n':
+	elif blocks.lower() == 'n':
 		MenuMain(id)
 	else:
 		print(f" Vui Lòng Nhập Số !!")
