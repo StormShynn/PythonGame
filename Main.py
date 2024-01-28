@@ -81,6 +81,7 @@ def Login():
 		
 def Register():
 	def User():
+		Clear()
 		Sregister()
 		user = input("Account Name: ")
 		if (len(user) < 3):
@@ -99,6 +100,7 @@ def Register():
 		if (ID == 1):
 			return user
 	def Password(user):
+		Clear()
 		Sregister()
 		print(f"Account Name: {user}")
 		pwd = input("Enter Password: ")
@@ -111,7 +113,6 @@ def Register():
 			Loading(3)
 			Password(user)
 		return pwd
-	Clear()
 	user = User()
 	pwd = Password(user)
 	System.SaveData(user, pwd)
@@ -324,6 +325,7 @@ def CoinMining(id):
 		CoinMining(id)
 
 def BXH(id):
+	Clear()
 	User, user, Coin, coin = System.Charts(id)
 	Scharts(1, User, Coin)
 	Scharts(2, user, coin)
