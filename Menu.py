@@ -130,7 +130,7 @@ def Scoinmining():
 def Scharts(top, user, coin):
 	charts = f"""
 	╔════════════════════════╗
-	║    Top {top}         ║
+	║        Top {top}           ║
 	║ User: {user}
 	║ Coin: {coin} Xu
 	╚════════════════════════╝
