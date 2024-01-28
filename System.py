@@ -100,4 +100,4 @@ def Charts(id):
 		if (int(Coin) > int(coin2)):
 			coin2 = data_list[i][3]
 			user2 = data_list[i][1]
-	return coin1, coin2, user1, user2
+	return user1, user2, coin1, coin2,
