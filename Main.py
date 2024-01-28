@@ -322,7 +322,7 @@ def CoinMining(id):
 		CoinMining(id)
 
 def BXH(id):
-	Coin, coin, User, user=System.Charts(id)
+	User, user, Coin, coin = System.Charts(id)
 	Scharts(1, User, Coin)
 	Scharts(2, user, coin)
 	Enter()
