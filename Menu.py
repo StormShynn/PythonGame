@@ -78,7 +78,7 @@ def Sbanner():
 	banner= """
 	╔════════════════════════════════════════╗
 	║               Mini Game                ║
-	║ 1.XỔ SỐ            3.BXH             ║
+	║ 1.XỔ SỐ              3.BXH             ║
 	║ 2.COIN MINING        4.Change Password ║
 	║                      0.EXIT            ║
 	╚════════════════════════════════════════╝
@@ -89,7 +89,7 @@ def Sbanner():
 def SXs():
 	xs= """
 	╔═══════════════════╗
-	║      Xổ Số      ║
+	║       Xổ Số       ║
 	║                   ║
 	╚═══════════════════╝
 	"""
@@ -99,8 +99,8 @@ def SXs():
 def SXs1():
 	xs= """
 	╔═══════════════════╗
-	║ 1.Chẵn           ║
-	║             2.Lẻ ║
+	║ 1.Chẵn            ║
+	║              2.Lẻ ║
 	╚═══════════════════╝
 	"""
 	print(xs)
@@ -129,7 +129,7 @@ def Scoinmining():
 def Scharts(top, user, coin):
 	charts = f"""
 	╔════════════════════════╗
-	║			 Top {top}         ║
+	║    Top {top}         ║
 	║ User: {user}
 	║ Coin: {coin} Xu
 	╚════════════════════════╝
