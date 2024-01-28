@@ -23,8 +23,8 @@ def Crossbar():
 	sys.stdout.write("\n")
 def Loading(I):
 	frames = ["\r[-->     ]", "\r[ -->    ]",
-	"\r[  -->   ]", "\r[   -->  ]",
-	"\r[    --> ]", "\r[     -->]"]
+												"\r[  -->   ]", "\r[   -->  ]",
+												"\r[    --> ]", "\r[     -->]"]
 	for i in range(I, 0, -1):
 		for frame in frames:
 			sys.stdout.write(frame + str(i))
@@ -296,9 +296,9 @@ def CoinMining(id):
 	print(f" User: {user}          Coin: {coin} Xu")
 	blocks = input(f" Nhập Số Block Đào: ")
 	coinlist = [200, 400, 600,
-							800, 1000, 1200,
-							1400, 1600, 1800,
-							2000, 2200, 2400]
+														800, 1000, 1200,
+														1400, 1600, 1800,
+														2000, 2200, 2400]
 	if blocks.isdigit():
 		for i in range(int(blocks)):
 			blockchain = random.randint(10, 50)
