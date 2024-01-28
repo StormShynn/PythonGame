@@ -1,7 +1,6 @@
 # [IMPORT]
 import os
 import gspread
-from threading import Thread
 from KEY import DATA, OPEN_KEY
 # [OPEN SHEET]
 gc = gspread.service_account_from_dict(DATA)
