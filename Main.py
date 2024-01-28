@@ -323,8 +323,8 @@ def CoinMining(id):
 
 def BXH(id):
 	Coin, coin, User, user=System.Charts(id)
-	Scharts(1, Coin, User)
-	Scharts(2, coin, user)
+	Scharts(1, User, Coin)
+	Scharts(2, user, coin)
 	Enter()
 	if (id == 0):
 		MENU()
