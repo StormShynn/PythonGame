@@ -18,7 +18,7 @@ def Enter():
 def Clear():
 	os.system("cls" if os.name == "nt" else "clear")
 def Crossbar():
-	for i in range(12):
+	for i in range(13):
 		sys.stdout.write("▂▂▂▂")
 def Loading(I):
 	frames = ["\r[-->     ]", "\r[ -->    ]",
