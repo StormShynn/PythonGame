@@ -211,10 +211,10 @@ def XS(id):
 		#i = 2 70le 30chan
 		percentage_even = 0.7
 		total_elements=100
-		if i == 1:
+		if i == 2:
 			even_count = int(total_elements * percentage_even)
 			odd_count = total_elements - even_count
-		elif i == 2:
+		elif i == 1:
 			odd_count = int(total_elements * percentage_even)
 			even_count = total_elements - odd_count
 		odd_numbers = [random.randrange(1, 99, 2) for _ in range(odd_count)]
