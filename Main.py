@@ -269,7 +269,7 @@ def XS(id):
 			print(TitleWin)
 			System.CoinRepair(Be, id)
 			print(f"Coin: +{Be} Xu\n")
-		elif (Se == 0 and Nu % 2 != 0):
+		elif (Se == 2 and Nu % 2 != 0):
 			print(TitleWin)
 			System.CoinRepair(Be, id)
 			print(f"Coin: +{Be} Xu\n")
@@ -277,7 +277,7 @@ def XS(id):
 			print(TitleLose)
 			System.CoinRepair(-Be, id)
 			print(f"Coin: -{Be} Xu\n")
-		elif (Se == 0 and Nu % 2 == 0):
+		elif (Se == 2 and Nu % 2 == 0):
 			print(TitleLose)
 			System.CoinRepair(-Be, id)
 			print(f"Coin: -{Be} Xu\n")
@@ -286,7 +286,7 @@ def XS(id):
 	num = Function(select)
 	Spin(id, num)
 	Reward(id, select, Bet, num)
-	input("Cotinue;")
+	Enter()
 	MenuMain(id)
 
 def CoinMining(id):
