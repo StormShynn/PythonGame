@@ -2,11 +2,7 @@
 import os
 import sys
 import random
-import string
 import System
-import gspread
-import secrets
-import datetime
 from time import sleep
 from Menu import Smenu, Sregister, Slogin, Sbanner, SchangePwd, SchangeCoin, Scoinmining, Scharts, SXs, SchangeCoin1, SchangeCoin2, SXs1, SXs2
 # [CODE]
