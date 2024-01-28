@@ -295,10 +295,7 @@ def CoinMining(id):
 	user, coin = System.LoadDataUser(id)
 	print(f" User: {user}          Coin: {coin} Xu")
 	blocks = input(f" Nhập Số Block Đào: ")
-	coinlist = [200, 400, 600,
-				800, 1000, 1200,
-				1400, 1600, 1800,
-				2000, 2200, 2400]
+	coinlist = list(range(200, 3000, 200))
 	if blocks.isdigit():
 		for i in range(int(blocks)):
 			blockchain = random.randint(10, 50)
