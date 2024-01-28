@@ -62,14 +62,14 @@ def Login():
 	if username.strip() == "":
 		print(f"{Space(2)}Error !")
 		print(f"{Space(2)}Auto exit enabled")
-		Loading()
-		Clear()
-		os.sys.exit()
+		Loading(3)
+		MENU()
 	password = input("Password: ")
 	id = System.CheckLogin(username, password)
 	if (id == 0):
 		print(" Đăng Nhập Thất Bại !")
-		sleep(2); MENU()
+		Loading(3)
+		MENU()
 	print(" Login Success !")
 	id -= 1
 	MenuMain(id)
