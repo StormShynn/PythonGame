@@ -132,7 +132,7 @@ def Scharts(top, user, coin):
 	╔════════════════════════╗
 	║        Top {top}           ║
 	║ User: {user}
-	║ Coin: {coin} Xu
+	║ Coin: {coin:,} Xu
 	╚════════════════════════╝
 	"""
 	print(charts)
