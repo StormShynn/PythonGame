@@ -61,6 +61,7 @@ def MENU():
 		sleep(2); MENU()
 		
 def Login():
+	Clear()
 	Slogin()
 	username = input("Account: ")
 	if username.strip() == "":
@@ -110,6 +111,7 @@ def Register():
 			Loading(3)
 			Password(user)
 		return pwd
+	Clear()
 	user = User()
 	pwd = Password(user)
 	System.SaveData(user, pwd)
