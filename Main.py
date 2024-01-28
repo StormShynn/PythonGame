@@ -23,8 +23,8 @@ def Crossbar():
 	sys.stdout.write("\n")
 def Loading(I):
 	frames = ["\r[-->     ]", "\r[ -->    ]",
-			"\r[  -->   ]", "\r[   -->  ]",
-			"\r[    --> ]", "\r[     -->]"]
+				"\r[  -->   ]", "\r[   -->  ]",
+				"\r[    --> ]", "\r[     -->]"]
 	for i in range(I, 0, -1):
 		for frame in frames:
 			sys.stdout.write(frame + str(i))
