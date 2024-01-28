@@ -6,15 +6,14 @@ import System
 from time import sleep
 from Menu import Smenu, Sregister, Slogin, Sbanner, SchangePwd, SchangeCoin, Scoinmining, Scharts, SXs, SchangeCoin1, SchangeCoin2, SXs1, SXs2
 # [CODE]
-print(" Vui Lòng Đợi Đang Tải Dữ Liệu Từ Sever !!")
 def Exit():
 	os.sys.exit()
 def Enter():
-	a = input(" Enter để tiếp tục")
+	a = input(" [Enter để tiếp tục] ")
 def Clear():
 	os.system("cls" if os.name == "nt" else "clear")
 def Crossbar():
-	for i in range(13):
+	for i in range(14):
 		sys.stdout.write("▂▂▂▂")
 	sys.stdout.write("\n")
 def Loading(I):
@@ -32,11 +31,10 @@ def Space(Number):
 	for i in range(Number):
 		Space += " " * i
 	return Space
-
 def MENU():
 	Clear()
 	Smenu()
-	select = input("CHỌN CHẾ ĐỘ: ")
+	select = input(" CHỌN CHẾ ĐỘ: ")
 	if select.isdigit():
 		option = int(select)
 		actions = {
@@ -54,17 +52,16 @@ def MENU():
 	else:
 		print(f" Vui Lòng Nhập Số !")
 		sleep(2); MENU()
-		
 def Login():
 	Clear()
 	Slogin()
-	username = input("Account: ")
+	username = input(" Account: ")
 	if username.strip() == "":
 		print(f"{Space(2)}Error !")
 		print(f"{Space(2)}Auto exit enabled")
 		Loading(3)
 		MENU()
-	password = input("Password: ")
+	password = input(" Password: ")
 	id = System.CheckLogin(username, password)
 	if (id == 0):
 		print(" Đăng Nhập Thất Bại !")
@@ -73,12 +70,11 @@ def Login():
 	print(" Login Success !")
 	id -= 1
 	MenuMain(id)
-		
 def Register():
 	def User():
 		Clear()
 		Sregister()
-		user = input("Account Name: ")
+		user = input(" Account Name: ")
 		if (len(user) < 3):
 			print(" Tên Quá Ngắn !")
 			Loading(3)
@@ -97,21 +93,20 @@ def Register():
 	def Password(user):
 		Clear()
 		Sregister()
-		print(f"Account Name: {user}")
+		print(f" Account Name: {user}")
 		pwd = input("Enter Password: ")
 		if (len(pwd) < 3):
-			print("Pass Quá Ngắn !")
+			print(" Pass Quá Ngắn !")
 			Loading(3)
 			Password(user)
 		elif (len(pwd) > 10):
-			print("Pass Quá Dài !")
+			print(" Pass Quá Dài !")
 			Loading(3)
 			Password(user)
 		return pwd
 	user = User()
 	pwd = Password(user)
 	System.SaveData(user, pwd)
-	
 def ChangeCoin():
 	def Coin():
 		Clear()
@@ -137,12 +132,12 @@ def ChangeCoin():
 		Clear()
 		SchangeCoin1()
 		System.ListOfAccount()
-		Continue = input("\n Continue: ")
+		Enter()
 		Loading(3)
 		ChangeCoin()
 	Clear()
 	SchangeCoin()
-	select = input("CHỌN CHẾ ĐỘ: ")
+	select = input(" CHỌN CHẾ ĐỘ: ")
 	if select.isdigit():
 		option = int(select)
 		actions = {
@@ -154,17 +149,18 @@ def ChangeCoin():
 			actions[option]()
 		else:
 			print(f" Lựa Chọn Không Hợp Lệ !")
-			sleep(2); ChangeCoin()
+			Loading(3)
+			ChangeCoin()
 	else:
 		print(f" Vui Lòng Nhập Số !")
-		sleep(2); ChangeCoin()
-		
+		Loading(3)
+		ChangeCoin()
 def MenuMain(id):
 	Clear()
 	Sbanner()
 	user, coin = System.LoadDataUser(id)
 	print(f" User: {user}          Coin: {coin} Xu")
-	select = input("CHỌN CHẾ ĐỘ: ")
+	select = input(" CHỌN CHẾ ĐỘ: ")
 	if select.isdigit():
 		option = int(select)
 		actions = {
@@ -178,10 +174,12 @@ def MenuMain(id):
 			actions[option]()
 		else:
 			print(f" Lựa Chọn Không Hợp Lệ !")
-			sleep(2); MenuMain(id)
+			Loading(2)
+			MenuMain(id)
 	else:
 		print(f" Vui Lòng Nhập Số !")
-		sleep(2); MenuMain(id)
+		Loading(2)
+		MenuMain(id)
 def XS(id):
 	Clear()
 	def Check(id):
@@ -192,8 +190,8 @@ def XS(id):
 			print(" Không đủ xu !")
 			Loading(3)
 			MenuMain(id)
-		print(f" User: {user}          Coin: {coin} Xu")
-		select = input("CHỌN: ")
+		print(f" User: {user}{Space(4)}Coin: {coin} Xu")
+		select = input(" CHỌN CỬA(1/2): ")
 		if select.isdigit():
 			select = int(select)
 			if (select == 1):
@@ -202,10 +200,12 @@ def XS(id):
 				return 2 #Le
 			else:
 				print(f" Lựa Chọn Không Hợp Lệ !")
-				sleep(2); XS(id)
+				Loading(3)
+				XS(id)
 		else:
 			print(f" Vui Lòng Nhập Số !")
-			sleep(2); XS(id)
+			Loading(3)
+			XS(id)
 	def Function(i):
 		#i = 1 70chan 30le
 		#i = 2 70le 30chan
@@ -226,7 +226,7 @@ def XS(id):
 		SXs2()
 		select = int(select)
 		user, coin = System.LoadDataUser(id)
-		print(f" User: {user}          Coin: {coin} Xu")
+		print(f" User: {user}{Space(4)}Coin: {coin} Xu")
 		if (select == 1):
 			title = f"Chẳn"
 		else:
@@ -283,12 +283,11 @@ def XS(id):
 	Reward(id, select, Bet, num)
 	Enter()
 	MenuMain(id)
-
 def CoinMining(id):
 	Clear()
 	Scoinmining()
 	user, coin = System.LoadDataUser(id)
-	print(f" User: {user}          Coin: {coin} Xu")
+	print(f" User: {user}{Space(4)}Coin: {coin} Xu")
 	blocks = input(f" Nhập Số Block Đào: ")
 	coinlist = list(range(200, 3000, 200))
 	if blocks.isdigit():
@@ -314,7 +313,6 @@ def CoinMining(id):
 		print(f" Vui Lòng Nhập Số !!")
 		Loading(3)
 		CoinMining(id)
-
 def BXH(id):
 	Clear()
 	User, user, Coin, coin = System.Charts(id)
