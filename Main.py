@@ -209,14 +209,13 @@ def XS(id):
 	def Function(i):
 		#i = 1 70chan 30le
 		#i = 2 70le 30chan
-		percentage_even = 0.7
-		total_elements=100
+		Percent = 0.7
 		if i == 2:
-			even_count = int(total_elements * percentage_even)
-			odd_count = total_elements - even_count
+			even_count = int( 100 * Percent)
+			odd_count = 100 - even_count
 		elif i == 1:
-			odd_count = int(total_elements * percentage_even)
-			even_count = total_elements - odd_count
+			odd_count = int( 100 * Percent)
+			even_count = 100 - odd_count
 		odd_numbers = [random.randrange(1, 99, 2) for _ in range(odd_count)]
 		even_numbers = [random.randrange(2, 99, 2) for _ in range(even_count)]
 		result_list = odd_numbers + even_numbers
