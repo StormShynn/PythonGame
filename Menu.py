@@ -2,8 +2,9 @@
 import sys
 # [CODE]
 def Crossbar():
-	for i in range(12):
+	for i in range(13):
 		sys.stdout.write("▂▂▂▂")
+	sys.stdout.write("\n")
 # [MENU CODE]
 def Smenu():
 	menu = """
