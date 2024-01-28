@@ -48,7 +48,7 @@ def MENU():
 		0: os.sys.exit,
 		1: lambda: Register(),
 		2: lambda: Login(),
-		3: lambda: charts(0),
+		3: lambda: BXH(0),
 		9: lambda: ChangeCoin()
 		}
 		if option in actions:
