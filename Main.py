@@ -48,10 +48,12 @@ def MENU():
 			actions[option]()
 		else:
 			print(f" Lựa Chọn Không Hợp Lệ !")
-			sleep(2); MENU()
+			Loading(3) 
+			MENU()
 	else:
 		print(f" Vui Lòng Nhập Số !")
-		sleep(2); MENU()
+		Loading(3)
+		MENU()
 def Login():
 	Clear()
 	Slogin()
