@@ -59,10 +59,7 @@ def ListOfAccount():
 	for i in range(len(data_list) - 1):
 		id = data_list[i][0]
 		user = data_list[i][1]
-		id1 = data_list[i+1][0]
-		user1 = data_list[i+1][1]
-		space = 12 - int(len(user))
-		text = f"{id}.{user}{' '*space}{id1}.{user1}"
+		text = f"{id}.{user}\n"
 		MSG.append(text)
 	MSG = ''.join(MSG)
 	print(MSG)
