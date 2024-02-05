@@ -170,7 +170,8 @@ def MenuMain(id):
 		1: lambda: XS(id),
 		2: lambda: CoinMining(id),
 		3: lambda: BXH(id),
-		4: lambda: MenuMain(id)
+		4: lambda: MenuMain(id),
+		5: lambda: Dice(id)
 		}
 		if option in actions:
 			actions[option]()
@@ -325,6 +326,114 @@ def BXH(id):
 		MENU()
 	else:
 		MenuMain(id)
-
+def Dice(id):
+	def Check(id):
+		user, coin = System.LoadDataUser(id)
+		if (coin < 0 or coin == 0):
+			print(" Không Đủ Xu !!")
+			Loading(3)
+			MenuMain(id)
+	def Select(id):
+		Clear()
+		Sdice()
+		Select = input(" Chọn Cửa: ")
+		if Select.isdigit():
+			Select = int(Select)
+			if (Select == 0):
+				MenuMain(id)
+			elif (Select > 0.9 and Select < 4.1):
+				return Select
+			else:
+				print(" Số Nhập Không Hợp Lệ !!")
+				Loading(3)
+				Dice(id)
+		else:
+			print(" Vui Lòng Nhập Số !!")
+			Loading(3)
+			Dice(id)
+	def BetCoin(id, Select):
+		XP = {
+			1: 'Tài', 2: 'Xỉu',
+			3: 'Chẳn', 4: 'Lẻ'
+		}
+		Clear()
+		SXs2()
+		user, coin = System.LoadDataUser(id)
+		print(f" User: {user}{Space(4)}Coin: {coin} Xu")
+		print(f" Chọn: {XP[Select]}")
+		Bet = input(" Bet: ")
+		if Bet.isdigit():
+			Bet = int(Bet)
+			if (Bet > coin or Bet == 0 or Bet < 0):
+				print(" Cược Sai !!")
+				Loading(3)
+				BetCoin(id)
+			else:
+				return Bet
+		else:
+			print(" Vui Lòng Nhập Số !!")
+			Loading(3)
+			BetCoin(id)
+	def Dice_icons():
+		Dice_icon = {
+		1: '⚀', 2: '⚁', 3: '⚂',
+		4: '⚃', 5: '⚄', 6: '⚅'
+		}
+		Numbers = random.sample(range(1,7), 3)
+		Number = Numbers
+		List = []
+		for i in Numbers:
+			List.append(Dice_icon[i])
+		Numbers = sum(Numbers)
+		return Numbers, List, Number
+	def CheckDice(Select, Numbers):
+		def check_condition(Numbers, conditions):
+			return Numbers in conditions
+		conditions = {
+			1: [11, 12, 13, 14, 15, 16, 17],  # Tai
+			2: [4, 5, 6, 7, 8, 9, 10],        # Xiu
+			3: [4, 6, 8, 10, 12, 14, 16, 18], # Chan
+			4: [3, 5, 7, 9, 11, 13, 15, 17]   # Le
+		}
+		if Select in conditions:
+			return int(check_condition(Numbers, conditions[Select]))
+		else:
+			return 2
+	def Reward(id, Bet, Return):
+		win = " Chúc Mừng Bạn Đã Thắng !"
+		loss = " Chúc Bạn May Mắn Lần Sau !"
+		if (Return == 1):
+			System.CoinRepair(Bet, id)
+			return win
+		elif (Return == 0):
+			System.CoinRepair(-Bet, id)
+			return loss
+		elif (Return == 2):
+			return " [ERROR] Liên Hệ Admin !!"
+	def Print(List, Number):
+		Lst = []
+		for dice in List:
+				X = (f"  {dice}  ")
+				Lst.append(X)
+		i = 0
+		for num in Number:
+			Lst.insert(i, num)
+			i += 2
+		print(' '.join(map(str, Lst)))
+	List = {
+			1: 'Tài', 2: 'Xỉu',
+			3: 'Chẳn', 4: 'Lẻ'
+		}
+	Check(id)
+	Select = Select(id)
+	Bet = BetCoin(id, Select)
+	Numbers, List, Number = Dice_icons()
+	XI = CheckDice(Select, Numbers)
+	Print(List, Number)
+	print(f"Kết Quả: {Numbers}")
+	Jk = Reward(id, Bet, XI)
+	print(Jk)
+	Enter()
+	MenuMain(id)
 Clear()
 MENU()
