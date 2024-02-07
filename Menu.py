@@ -81,7 +81,7 @@ def Sbanner():
 	║               Mini Game                ║
 	║ 1.XỔ SỐ              3.BXH             ║
 	║ 2.COIN MINING        4.Change Password ║
-	║                      0.EXIT            ║
+	║ 5.CLTX               0.EXIT            ║
 	╚════════════════════════════════════════╝
 	"""
 	print(banner)
