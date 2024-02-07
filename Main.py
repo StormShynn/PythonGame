@@ -364,6 +364,7 @@ def Dice(id):
 		Bet = input(" Bet: ")
 		if Bet.isdigit():
 			Bet = int(Bet)
+			coin = System.LoadDataCoin(id)
 			if (Bet > coin or Bet == 0 or Bet < 0):
 				print(" Cược Sai !!")
 				Loading(3)
