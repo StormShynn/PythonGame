@@ -301,13 +301,12 @@ def CoinMining(id):
 			A = blockchain * difficulty
 			for _ in range(A):
 				nimed += 1 
-				sys.stdout.write(f"\r[{i}] Mine: {nimed:07d}")
+				sys.stdout.write(f"\r[{i}] Mine: {nimed:06d}")
 				sleep(0)
 			mined_coin = random.choice(coinlist)
 			System.CoinRepair(mined_coin, id)
 			user, coin = System.LoadDataUser(id)
-			unit = "Xu" if mined_coin >= 1000 else " Xu"
-			print(f"\n[{i}] +{mined_coin} {unit} | Tổng: {coin} Xu\n")
+			print(f"\n[{i}] +{mined_coin} Xu | Tổng: {coin} Xu\n")
 		Loading(5)
 		MenuMain(id)
 	elif blocks.lower() == 'n':
@@ -329,6 +328,7 @@ def BXH(id):
 def Dice(id):
 	def Check(id):
 		user, coin = System.LoadDataUser(id)
+		coin = System.LoadDataCoin(id)
 		if (coin < 0 or coin == 0):
 			print(" Không Đủ Xu !!")
 			Loading(3)
