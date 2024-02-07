@@ -117,6 +117,16 @@ def SXs2():
 	print(xs)
 	Crossbar()
 	
+def SXs3():
+	xs= """
+	╔══════════════════╗
+	║     Chọn Cửa     ║
+	║                  ║
+	╚══════════════════╝
+	"""
+	print(xs)
+	Crossbar()
+	
 def Scoinmining():
 	coin= """
 	╔═════════════════════════╗
@@ -125,6 +135,17 @@ def Scoinmining():
 	╚═════════════════════════╝
 	"""
 	print(coin)
+	Crossbar()
+	
+def Sdice():
+	dice= """
+	╔══════╦═══════════════════╗
+	║ Dice ║ 1.Tài    3.Chẳn   ║
+	║      ║ 2.Xỉu   4.Lẻ      ║
+	╚══════╩═══════════════════╝
+	Tài: 4->10  | Xỉu: 11->17
+	"""
+	print(dice)
 	Crossbar()
 	
 def Scharts(top, user, coin):
